@@ -11,6 +11,7 @@ import { URL } from "url";
 interface CachedImage {
 	url: string;
 	media_id: string;
+	timestamp: number;  // 上传时间戳
 }
 
 /**
@@ -207,6 +208,7 @@ async function uploadImageInternal(
 /**
  * 上传图片素材（带缓存）
  * 如果相同内容的图片已上传过，直接返回缓存的结果
+ * 注意：微信的 media_id 有效期为 3 天，超过后会自动失效
  */
 export async function uploadImage(
 	imageBuffer: ArrayBuffer,
@@ -219,15 +221,29 @@ export async function uploadImage(
 	// 检查缓存
 	const cached = uploadedImageCache.get(fileHash);
 	if (cached) {
-		console.log(`  复用图片缓存: ${filename}`);
-		return { url: cached.url, media_id: cached.media_id };
+		// 检查缓存是否过期（3天 = 3 * 24 * 60 * 60 * 1000 = 259200000 毫秒）
+		const cacheAge = Date.now() - cached.timestamp;
+		const cacheMaxAge = 3 * 24 * 60 * 60 * 1000;  // 3 天
+
+		if (cacheAge < cacheMaxAge) {
+			console.log(`  复用图片缓存: ${filename}`);
+			return { url: cached.url, media_id: cached.media_id };
+		} else {
+			console.log(`  缓存已过期，重新上传: ${filename}`);
+			// 移除过期缓存
+			uploadedImageCache.delete(fileHash);
+		}
 	}
 
 	// 上传图片
 	const result = await uploadImageInternal(imageBuffer, filename, accessToken);
 
-	// 缓存结果
-	uploadedImageCache.set(fileHash, { url: result.url, media_id: result.media_id });
+	// 缓存结果（包含时间戳）
+	uploadedImageCache.set(fileHash, {
+		url: result.url,
+		media_id: result.media_id,
+		timestamp: Date.now()
+	});
 
 	return result;
 }
