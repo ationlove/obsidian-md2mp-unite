@@ -1,0 +1,186 @@
+/**
+ * md2mp 默认主题
+ * 经典简洁布局，适合长文阅读
+ */
+/* 全局属性 */
+#md2mp {
+    line-height: 1.75;
+    font-size: 16px;
+}
+/* 全局子元素属性 */
+/* 支持分组 */
+#md2mp h1,
+#md2mp h2,
+#md2mp h3,
+#md2mp h4,
+#md2mp h5,
+#md2mp h6,
+#md2mp p {
+    margin: 1em 0;
+}
+/* 段落 */
+#md2mp p {
+}
+/* 加粗 */
+#md2mp p strong {
+}
+/* 斜体 */
+#md2mp p em {
+}
+/* 一级标题 */
+#md2mp h1 {
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.5em;
+}
+/* 标题文字 */
+#md2mp h1 span {
+}
+/* 标题前缀，h1-h6都支持前缀 */
+#md2mp h1::before {
+}
+/* 标题后缀，h1-h6都支持后缀 */
+#md2mp h1::after {
+}
+/* 二级标题 */
+#md2mp h2 {
+    text-align: center;
+    font-size: 1.2em;
+    border-bottom: 1px solid #f7f7f7;
+    font-weight: bold;
+}
+/* 三-六级标题 */
+#md2mp h3,
+#md2mp h4,
+#md2mp h5,
+#md2mp h6 {
+    font-size: 1em;
+    font-weight: bold;
+}
+/* 列表 */
+#md2mp ul,
+#md2mp ol {
+    padding-left: 1.2em;
+}
+/* 列表元素 */
+#md2mp li {
+    margin-left: 1.2em;
+}
+/* 图片 */
+#md2mp img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+/* 表格 */
+#md2mp table {
+    border-collapse: collapse;
+    border: 1px solid #d8d8d8;
+    margin: 1.4em auto;
+    max-width: 100%;
+    table-layout: fixed;
+    text-align: left;
+    overflow: auto;
+    display: table;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+/* 表格单元格 */
+#md2mp table td,
+#md2mp table th {
+    font-size: 0.75em;
+    padding: 9px 12px;
+    line-height: 22px;
+    color: #222;
+    border: 1px solid #d8d8d8;
+    vertical-align: top;
+}
+/* 表格表头 */
+#md2mp table th {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+/* 表格斑马条纹效果 */
+#md2mp table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+}
+/* 引用块 */
+#md2mp blockquote {
+    background: #afb8c133;
+    border-left: 0.5em solid #ccc;
+    margin: 1.5em 0;
+    padding: 0.5em 10px;
+    font-style: italic;
+    font-size: 0.9em;
+}
+/* 引用块前缀 */
+#md2mp blockquote::before {
+}
+/* 引用块后缀 */
+#md2mp blockquote::after {
+}
+/* 行内代码 */
+#md2mp code {
+    color: #ff502c;
+    padding: 4px 6px;
+    font-size: 0.78em;
+    background-color: #f3f4f5;
+    border-radius: 4px;
+}
+/* 代码块中的代码重置样式 */
+#md2mp pre code {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+/* 代码块外围 */
+#md2mp pre {
+    border: 1px solid #d8d8d8;
+    line-height: 2;
+    margin: 1em 0.5em;
+    padding: .5em;
+    font-size: 15px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+/* 代码块 */
+#md2mp pre code {
+    display: block;
+    overflow-x: auto;
+    margin: .5em;
+    padding: 0;
+}
+/* 分割线 */
+#md2mp hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+/* 链接 */
+#md2mp a {
+    word-wrap: break-word;
+    color: #0069c2;
+}
+/* 原始链接旁脚注上标 */
+#md2mp .footnote {
+    color: #0069c2;
+}
+/* 脚注行 */
+#md2mp #footnotes p {
+    display: flex;
+    margin: 0;
+    font-size: 0.9em;
+}
+/* 脚注行内编号 */
+#md2mp .footnote-num {
+    display: inline;
+    width: 10%;
+}
+/* 脚注行内文字 */
+#md2mp .footnote-txt {
+    display: inline;
+    width: 90%;
+    word-wrap: break-word;
+    word-break: break-all;
+}

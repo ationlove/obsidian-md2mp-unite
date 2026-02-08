@@ -1,0 +1,205 @@
+/*
+ *     Cherry Theme    /    Author - md2mp
+ *     樱花粉色主题，温柔浪漫
+ */
+
+:root {
+    --cherry-pink: #ff69b4;
+    --cherry-light: #ffb6c1;
+    --cherry-pale: #ffe4e1;
+    --cherry-rose: #db7093;
+}
+
+#md2mp {
+    line-height: 1.75;
+    font-size: 16px;
+    color: #4a4a4a;
+}
+
+#md2mp p {
+    margin: 1em 0;
+}
+
+#md2mp h1,
+#md2mp h2,
+#md2mp h3,
+#md2mp h4,
+#md2mp h5,
+#md2mp h6 {
+    margin: 1.2em 0 1em;
+    padding: 0px;
+    font-weight: bold;
+    color: var(--cherry-rose);
+}
+
+#md2mp h1 {
+    font-size: 1.5em;
+    text-align: center;
+    position: relative;
+}
+
+#md2mp h1::before {
+    content: '🌸';
+    display: block;
+    font-size: 1.5em;
+    margin-bottom: 8px;
+}
+
+#md2mp h2 {
+    font-size: 1.3em;
+    text-align: center;
+    background: var(--cherry-pale);
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    border: 2px solid var(--cherry-light);
+}
+
+#md2mp h3 {
+    font-size: 1.2em;
+    position: relative;
+    padding-left: 20px;
+}
+
+#md2mp h3::before {
+    content: '💮';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.9em;
+}
+
+#md2mp h4 {
+    font-size: 1.1em;
+    color: var(--cherry-pink);
+}
+
+#md2mp h5,
+#md2mp h6 {
+    font-size: 1em;
+}
+
+#md2mp strong {
+    color: var(--cherry-pink);
+    font-weight: bold;
+}
+
+#md2mp em {
+    color: var(--cherry-rose);
+}
+
+#md2mp a {
+    color: var(--cherry-pink);
+    text-decoration: none;
+    border-bottom: 2px dotted var(--cherry-light);
+}
+
+#md2mp blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    border-left: 5px solid #ff69b4;
+    background: #ffe4e1;
+    border-radius: 0 12px 12px 0;
+}
+
+#md2mp ul,
+#md2mp ol {
+    padding-left: 1.5em;
+    margin: 1em 0;
+}
+
+#md2mp li {
+    margin: 0.5em 0;
+    line-height: 1.8;
+}
+
+#md2mp code {
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+}
+
+#md2mp p code,
+#md2mp li code {
+    color: #db7093;
+    background: #ffe4e1;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 0.9em;
+}
+
+#md2mp pre {
+    background: #fff0f5;
+    color: #4a4a4a;
+    border: 2px solid #ffb6c1;
+    border-radius: 12px;
+    padding: 1em;
+    margin: 1em 0;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.15);
+}
+
+#md2mp pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+#md2mp table {
+    border-collapse: collapse;
+    border: 1px solid #ffb6c1;
+    margin: 1.5em auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+#md2mp table th,
+#md2mp table td {
+    border: 1px solid #ffb6c1;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+#md2mp table th {
+    background: #ff69b4;
+    color: white;
+    font-weight: bold;
+}
+
+#md2mp table tr:nth-child(even) {
+    background: #ffe4e1;
+}
+
+#md2mp img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(255, 105, 180, 0.25);
+}
+
+#md2mp hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cherry-light), var(--cherry-pink), var(--cherry-light), transparent);
+    margin: 2em 0;
+}
+
+#md2mp .footnote {
+    color: var(--cherry-pink);
+}
+
+#md2mp #footnotes p {
+    display: flex;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+#md2mp .footnote-num {
+    display: inline;
+    width: 10%;
+}
+
+#md2mp .footnote-txt {
+    display: inline;
+    width: 90%;
+}

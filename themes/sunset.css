@@ -1,0 +1,192 @@
+/*
+ *     Sunset Theme    /    Author - md2mp
+ *     日落渐变主题，温暖活力
+ */
+
+:root {
+    --sunset-orange: #ff6b35;
+    --sunset-red: #f7931e;
+    --sunset-pink: #ffcc5c;
+    --sunset-bg: #fff3e6;
+}
+
+#md2mp {
+    line-height: 1.75;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+#md2mp p {
+    margin: 1em 0;
+}
+
+#md2mp h1,
+#md2mp h2,
+#md2mp h3,
+#md2mp h4,
+#md2mp h5,
+#md2mp h6 {
+    margin: 1.2em 0 1em;
+    padding: 0px;
+    font-weight: bold;
+}
+
+#md2mp h1 {
+    font-size: 1.5em;
+    text-align: center;
+    background: linear-gradient(135deg, var(--sunset-orange) 0%, var(--sunset-red) 50%, var(--sunset-pink) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#md2mp h2 {
+    font-size: 1.3em;
+    padding: 8px 16px;
+    background: linear-gradient(90deg, var(--sunset-orange), var(--sunset-red));
+    color: white;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+#md2mp h3 {
+    font-size: 1.2em;
+    color: var(--sunset-orange);
+    border-bottom: 2px dashed var(--sunset-red);
+}
+
+#md2mp h4 {
+    font-size: 1.1em;
+    color: var(--sunset-red);
+}
+
+#md2mp h5,
+#md2mp h6 {
+    font-size: 1em;
+}
+
+#md2mp strong {
+    color: var(--sunset-orange);
+    font-weight: bold;
+}
+
+#md2mp a {
+    color: var(--sunset-orange);
+    text-decoration: none;
+    border-bottom: 2px solid var(--sunset-pink);
+    transition: all 0.2s;
+}
+
+#md2mp a:hover {
+    color: var(--sunset-red);
+}
+
+#md2mp blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    border-left: 5px solid #ff6b35;
+    background: #fff3e6;
+    border-radius: 8px;
+}
+
+#md2mp ul,
+#md2mp ol {
+    padding-left: 1.5em;
+    margin: 1em 0;
+}
+
+#md2mp li {
+    margin: 0.5em 0;
+    line-height: 1.8;
+}
+
+#md2mp code {
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+}
+
+#md2mp p code,
+#md2mp li code {
+    color: #d84315;
+    background: #fff3e6;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+#md2mp pre {
+    background: #2d2d2d;
+    color: #f5f5f5;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
+    overflow-x: auto;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+}
+
+#md2mp pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+#md2mp table {
+    border-collapse: collapse;
+    border: 1px solid #ffcc5c;
+    margin: 1.5em auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+#md2mp table th,
+#md2mp table td {
+    border: 1px solid #ffcc5c;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+#md2mp table th {
+    background: linear-gradient(90deg, #ff6b35, #f7931e);
+    color: white;
+    font-weight: bold;
+}
+
+#md2mp table tr:nth-child(even) {
+    background: #fff3e6;
+}
+
+#md2mp img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
+}
+
+#md2mp hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--sunset-orange), var(--sunset-red), var(--sunset-pink), transparent);
+    margin: 2em 0;
+    border-radius: 2px;
+}
+
+#md2mp .footnote {
+    color: var(--sunset-orange);
+}
+
+#md2mp #footnotes p {
+    display: flex;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+#md2mp .footnote-num {
+    display: inline;
+    width: 10%;
+}
+
+#md2mp .footnote-txt {
+    display: inline;
+    width: 90%;
+}

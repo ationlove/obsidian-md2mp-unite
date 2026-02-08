@@ -1,0 +1,239 @@
+/*
+ *     Ocean Theme    /    Author - md2mp
+ *     深海蓝色主题，适合技术文章
+ */
+
+:root {
+    --ocean-blue: #0077be;
+    --ocean-dark: #004c8c;
+    --ocean-light: #e6f3f8;
+    --ocean-pale: #b3d9f0;
+}
+
+#md2mp {
+    line-height: 1.75;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+#md2mp p {
+    margin: 1em 0;
+}
+
+#md2mp h1,
+#md2mp h2,
+#md2mp h3,
+#md2mp h4,
+#md2mp h5,
+#md2mp h6 {
+    margin: 1.2em 0 1em;
+    padding: 0px;
+    font-weight: bold;
+    color: var(--ocean-dark);
+}
+
+#md2mp h1 {
+    font-size: 1.5em;
+    text-align: center;
+    background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--ocean-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#md2mp h2 {
+    font-size: 1.3em;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--ocean-blue);
+    position: relative;
+}
+
+#md2mp h2::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--ocean-dark);
+}
+
+#md2mp h3 {
+    font-size: 1.2em;
+    padding-left: 12px;
+    border-left: 4px solid var(--ocean-blue);
+}
+
+#md2mp h4 {
+    font-size: 1.1em;
+    color: var(--ocean-blue);
+}
+
+#md2mp h5,
+#md2mp h6 {
+    font-size: 1em;
+}
+
+#md2mp strong {
+    color: var(--ocean-blue);
+    font-weight: bold;
+}
+
+#md2mp a {
+    color: var(--ocean-blue);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.2s;
+}
+
+#md2mp a:hover {
+    border-bottom-color: var(--ocean-blue);
+}
+
+#md2mp blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    border-left: 4px solid #0077be;
+    background: #e6f3f8;
+    color: #334;
+}
+
+#md2mp ul,
+#md2mp ol {
+    padding-left: 1.5em;
+    margin: 1em 0;
+}
+
+#md2mp li {
+    margin: 0.5em 0;
+    line-height: 1.8;
+}
+
+#md2mp code {
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+}
+
+#md2mp p code,
+#md2mp li code {
+    color: #004c8c;
+    background: #e6f3f8;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+#md2mp pre {
+    background: #2d3748;
+    color: #e2e8f0;
+    border-radius: 6px;
+    padding: 1em;
+    margin: 1em 0;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(0, 119, 190, 0.2);
+}
+
+#md2mp pre code {
+    background: transparent;
+    color: #e2e8f0;
+    padding: 0;
+}
+
+/* 代码高亮颜色覆盖 - 适配深色背景 */
+#md2mp code .hljs-keyword,
+#md2mp code .hljs-built_in,
+#md2mp code .hljs-type {
+    color: #7dd3fc;
+}
+
+#md2mp code .hljs-string,
+#md2mp code .hljs-attr {
+    color: #86efac;
+}
+
+#md2mp code .hljs-number,
+#md2mp code .hljs-literal {
+    color: #fca5a5;
+}
+
+#md2mp code .hljs-comment,
+#md2mp code .hljs-quote {
+    color: #94a3b8;
+}
+
+#md2mp code .hljs-function,
+#md2mp code .hljs-title {
+    color: #fcd34d;
+}
+
+#md2mp code .hljs-variable,
+#md2mp code .hljs-name {
+    color: #e2e8f0;
+}
+
+#md2mp code .hljs-tag {
+    color: #7dd3fc;
+}
+
+#md2mp code .hljs-attribute {
+    color: #fcd34d;
+}
+
+#md2mp table {
+    border-collapse: collapse;
+    border: 1px solid #004c8c;
+    margin: 1.5em auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+#md2mp table th,
+#md2mp table td {
+    border: 1px solid #004c8c;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+#md2mp table th {
+    background: #004c8c;
+    color: white;
+    font-weight: bold;
+}
+
+#md2mp table tr:nth-child(even) {
+    background: #e6f3f8;
+}
+
+#md2mp img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+    border-radius: 4px;
+}
+
+#md2mp hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--ocean-blue), transparent);
+    margin: 2em 0;
+}
+
+#md2mp .footnote {
+    color: var(--ocean-blue);
+}
+
+#md2mp #footnotes p {
+    display: flex;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+#md2mp .footnote-num {
+    display: inline;
+    width: 10%;
+}
+
+#md2mp .footnote-txt {
+    display: inline;
+    width: 90%;
+}

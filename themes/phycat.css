@@ -1,0 +1,313 @@
+/*
+ *     Typora Theme - Phycat    /    Author - sumruler
+ *     https://github.com/sumruler/typora-theme-phycat
+ */
+
+:root {
+    /* 标题后小图标，借鉴自思源笔记主题——Savor */
+    --h3-r-graphic: url("data:image/svg+xml;utf8,<svg fill='rgba(74, 200, 141, 0.5)' height='28' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>")
+        no-repeat center;
+    --h4-r-graphic: url("data:image/svg+xml;utf8,<svg fill='rgba(74, 200, 141, 0.5)' height='24' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286z'/></svg>")
+        no-repeat center;
+    --h5-r-graphic: url("data:image/svg+xml;utf8,<svg fill='rgba(74, 200, 141, 0.5)' height='24' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 22.857c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286zM4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286z'/></svg>")
+        no-repeat center;
+    --h6-r-graphic: url("data:image/svg+xml;utf8,<svg fill='rgba(74, 200, 141, 0.5)' height='24' viewBox='0 0 32 32' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M4.571 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM4.571 11.429c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 18.286c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 25.143c-1.257 0-2.286 1.029-2.286 2.286s1.029 2.286 2.286 2.286 2.286-1.029 2.286-2.286-1.029-2.286-2.286-2.286zM11.429 16c1.257 0 2.286-1.029 2.286-2.286s-1.029-2.286-2.286-2.286-2.286 1.029-2.286 2.286 1.029 2.286 2.286 2.286z'/></svg>")
+        no-repeat center;
+
+    /* 主题颜色 */
+    --head-title-color: #3db8bf;
+    /* 标题主色 */
+    --head-title-h2-color: #fff;
+    --head-title-h2-background: linear-gradient(to right, #3db8d3, #80f7c4);
+    /* 二级标题主色，因为二级标题是背景色的，所以单独设置 */
+
+    --element-color: #3db8bf;
+    /* 元素主色 */
+    --element-color-deep: #089ba3;
+    /* 元素深色 */
+    --element-color-shallow: #7aeaf0;
+    /* 元素浅色 */
+    --element-color-so-shallow: #7aeaf077;
+    /* 元素很浅色 */
+    --element-color-soo-shallow: #7aeaf018;
+    /* 元素非常浅色 */
+
+    --element-color-linecode: #089ba3;
+    /* 行内代码文字色 */
+    --element-color-linecode-background: #7aeaf018;
+    /* 行内代码背景色 */
+}
+#md2mp {
+    font-size: 14px;
+    margin: 0 auto;
+    line-height: 1.75;
+    letter-spacing: 1.1px;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: left;
+    background-position: center center;
+}
+#md2mp p {
+    text-align: justify;
+    color: #333;
+    margin: 10px 0;
+    word-spacing: 2px;
+}
+#md2mp h3::after,
+#md2mp h4::after,
+#md2mp h5::after,
+#md2mp h6::after {
+    content: "";
+    margin-left: 0.2em;
+    height: 2em;
+    width: 1.2em;
+}
+#md2mp h3::after {
+    background: var(--h3-r-graphic);
+    background-position-y: -2px;
+}
+#md2mp h4::after {
+    background: var(--h4-r-graphic);
+    background-position-y: -2px;
+}
+#md2mp h5::after {
+    background: var(--h5-r-graphic);
+    background-position-y: -1px;
+}
+#md2mp h6::after {
+    background: var(--h6-r-graphic);
+    background-position-y: -1px;
+}
+#md2mp h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+#md2mp h2 {
+    color: var(--head-title-h2-color);
+    font-size: 1.4em;
+    line-height: 1.6;
+    width: fit-content;
+    font-weight: bold;
+    margin: 20px 0 5px;
+    padding: 1px 12.5px;
+    border-radius: 4px;
+    background: var(--head-title-h2-background);
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    display: inline-block;
+}
+#md2mp h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    display: flex;
+    align-items: top;
+}
+#md2mp h3 {
+    width: fit-content;
+    margin: 20px 0 5px;
+    font-size: 1.3em;
+    padding-left: 10px;
+    border-left: 5px solid var(--head-title-color);
+}
+#md2mp h3 span {
+    border-bottom: 2px hidden var(--head-title-color);
+}
+#md2mp h4 {
+    margin: 20px 0 5px;
+    font-size: 1.15em;
+}
+#md2mp h4::before {
+    content: "";
+    margin-right: 7px;
+    margin-top: 8px;
+    background-color: var(--head-title-color);
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: var(--head-title-color) 1px solid;
+}
+#md2mp h5 {
+    margin: 20px 0 5px;
+    font-size: 1.1em;
+}
+#md2mp h5::before {
+    content: "";
+    margin-right: 7px;
+    margin-top: 8px;
+    display: inline-block;
+    background-color: #ffffff;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: var(--head-title-color) 2px solid;
+}
+#md2mp h6 {
+    margin: 20px 0 5px;
+    font-size: 1.1em;
+}
+#md2mp h6::before {
+    content: "⁘";
+    color: var(--head-title-color);
+    margin-right: 7px;
+}
+
+#md2mp ol {
+    margin-left: 2px;
+    padding-left: 12px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#md2mp ul {
+    list-style-type: disc;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#md2mp ul ul {
+    list-style-type: circle;
+}
+
+#md2mp ul ul ul {
+    list-style-type: square;
+}
+
+#md2mp ol {
+    padding-left: 27px;
+    list-style-type: decimal;
+}
+#md2mp ol ol {
+    list-style-type: lower-alpha;
+}
+#md2mp ol ol ol {
+    list-style-type: lower-roman;
+}
+
+#md2mp li {
+    color: #333;
+    margin: 0px 6px;
+    word-spacing: 2px;
+    line-height: 2.5;
+    position: relative;
+}
+#md2mp li > p {
+    margin: 0;
+}
+#md2mp blockquote {
+    font-size: 12px;
+    margin-left: 12px;
+    text-align: justify;
+    padding: 12px;
+    background: #7aeaf018;
+    border: 0px solid #3db8bf;
+    border-left-color: #3db8bf;
+    border-left-width: 4px;
+    border-radius: 4px;
+    line-height: 26px;
+}
+#md2mp blockquote p {
+    color: #000;
+}
+#md2mp a {
+    color: #000;
+    font-weight: bolder;
+    text-decoration: none;
+    border-bottom: 1px solid #3db8bf;
+}
+
+#md2mp strong {
+    color: #000;
+    font-weight: bold;
+}
+#md2mp em {
+    font-style: italic;
+    color: #000;
+}
+#md2mp del {
+    text-decoration-color: var(--element-color-deep);
+}
+#md2mp hr {
+    height: 1px;
+    padding: 0;
+    border: none;
+    border-top: 2px solid var(--head-title-color);
+}
+#md2mp img {
+    max-width: 90%;
+    display: block;
+    border-radius: 6px;
+    margin: 10px auto;
+    object-fit: contain;
+}
+#md2mp p code {
+    padding: 3px 3px 1px;
+    color: #089ba3;
+    background: #7aeaf018;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+}
+#md2mp li code {
+    color: #089ba3;
+}
+#md2mp pre {
+    border-radius: 5px;
+    line-height: 2;
+    margin: 1em 0.5em;
+    padding: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 5px;
+    font-size: 12px;
+}
+#md2mp pre code {
+    display: block;
+    overflow-x: auto;
+    margin: 0.5em;
+    padding: 0;
+}
+#md2mp table {
+    border-collapse: collapse;
+    border: 1px solid #089ba3;
+    margin: 1.4em auto;
+    max-width: 100%;
+    table-layout: fixed;
+    text-align: left;
+    overflow: auto;
+    display: table;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+#md2mp table td,
+#md2mp table th {
+    font-size: 10px;
+    padding: 9px 12px;
+    line-height: 22px;
+    color: #222;
+    border: 1px solid #089ba3;
+    vertical-align: top;
+}
+#md2mp table th {
+    font-weight: bold;
+    background-color: #7aeaf018;
+    color: #089ba3;
+}
+
+#md2mp .footnote {
+    color: var(--primary-color);
+}
+#md2mp #footnotes p {
+    display: flex;
+    margin: 0;
+    font-size: 0.9em;
+}
+#md2mp .footnote-num {
+    display: inline;
+    width: 10%;
+}
+#md2mp .footnote-txt {
+    display: inline;
+    width: 90%;
+    word-wrap: break-word;
+    word-break: break-all;
+}

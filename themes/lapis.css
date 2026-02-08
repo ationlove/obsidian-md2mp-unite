@@ -1,0 +1,188 @@
+/*
+ *     Typora Theme - Lapis    /    Author - YiNN
+ *     https://github.com/YiNNx/typora-theme-lapis
+ */
+
+:root {
+    --text-color: #40464f;
+    --primary-color: #4870ac;
+    --bg-color: #ffffff;
+    --marker-color: #a2b6d4;
+    --source-color: #a8a8a9;
+    --header-span-color: var(--primary-color);
+    --block-bg-color: #f6f8fa;
+}
+#md2mp {
+    color: var(--text-color);
+    line-height: 1.75;
+    font-size: 16px;
+}
+#md2mp p {
+    margin: 1em 0;
+}
+#md2mp strong {
+    color: var(--primary-color);
+}
+#md2mp a {
+    word-wrap: break-word;
+    color: var(--primary-color);
+}
+#md2mp p {
+    color: var(--text-color);
+}
+#md2mp h4,
+#md2mp h5,
+#md2mp h6 {
+    font-weight: normal;
+}
+#md2mp h1,
+#md2mp h2,
+#md2mp h3,
+#md2mp h4,
+#md2mp h5,
+#md2mp h6 {
+    padding: 0px;
+    color: var(--primary-color);
+    margin: 1.2em 0 1em;
+}
+#md2mp h1 {
+    text-align: center;
+}
+#md2mp h2 {
+    padding: 1px 12.5px;
+    border-radius: 4px;
+    display: inline-block;
+}
+#md2mp h2,
+#md2mp h2 code {
+    background-color: var(--header-span-color);
+}
+#md2mp h2,
+#md2mp h2 a,
+#md2mp h2 code,
+#md2mp h2 strong {
+    color: var(--bg-color);
+}
+#md2mp h1 {
+    font-size: 1.5em;
+}
+#md2mp h2 {
+    font-size: 1.3em;
+}
+#md2mp h3 {
+    font-size: 1.3em;
+}
+#md2mp h4 {
+    font-size: 1.2em;
+}
+#md2mp h5 {
+    font-size: 1.2em;
+}
+#md2mp h6 {
+    font-size: 1.2em;
+}
+#md2mp ul {
+    list-style-type: disc;
+}
+#md2mp em {
+    padding: 0 3px 0 0;
+}
+#md2mp ul ul {
+    list-style-type: square;
+}
+#md2mp ol {
+    list-style-type: decimal;
+}
+#md2mp blockquote {
+    display: block;
+    font-size: 0.9em;
+    border-left: 3px solid #4870ac;
+    padding: 0.5em 1em;
+    margin: 0;
+    background: #f6f8fa;
+}
+#md2mp p code {
+    color: #4870ac;
+    font-size: 0.9em;
+    font-weight: normal;
+    word-wrap: break-word;
+    padding: 2px 4px 2px;
+    border-radius: 3px;
+    margin: 2px;
+    background-color: #f6f8fa;
+    word-break: break-all;
+}
+#md2mp img {
+    max-width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+#md2mp table {
+    display: table;
+    text-align: justify;
+    overflow-x: auto;
+    border-collapse: collapse;
+    border: 1px solid #d9dfe4;
+    margin: 1.4em auto;
+    max-width: 100%;
+    table-layout: fixed;
+    text-align: left;
+    overflow: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+#md2mp table th,
+#md2mp table td {
+    border: 1px solid #d9dfe4;
+    padding: 9px 12px;
+    font-size: 0.75em;
+    line-height: 22px;
+    vertical-align: top;
+}
+#md2mp table th {
+    text-align: center;
+    font-weight: bold;
+    color: #4870ac;
+    background: #f7f7f7;
+}
+#md2mp hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 2px solid #eef2f5;
+    border-radius: 2px;
+}
+#md2mp pre {
+    border-radius: 5px;
+    line-height: 2;
+    margin: 1em 0.5em;
+    padding: .5em;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 1px 5px;
+    font-size: 12px;
+}
+#md2mp pre code {
+    display: block;
+    overflow-x: auto;
+    margin: .5em;
+    padding: 0;
+}
+#md2mp .footnote {
+    color: var(--primary-color);
+}
+#md2mp #footnotes p {
+    display: flex;
+    margin: 0;
+    font-size: 0.9em;
+}
+#md2mp .footnote-num {
+    display: inline;
+    width: 10%;
+}
+#md2mp .footnote-txt {
+    display: inline;
+    width: 90%;
+    word-wrap: break-word;
+    word-break: break-all;
+}

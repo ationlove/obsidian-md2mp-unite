@@ -1,0 +1,181 @@
+/*
+ *     Midnight Theme    /    Author - md2mp
+ *     暗色主题，适合夜间阅读
+ */
+
+:root {
+    --midnight-dark: #1a1a2e;
+    --midnight-blue: #16213e;
+    --midnight-purple: #4a4e69;
+    --midnight-light: #9a8c98;
+    --midnight-accent: #c9ada7;
+}
+
+#md2mp {
+    line-height: 1.75;
+    font-size: 16px;
+    color: #c9ada7;
+    background: var(--midnight-dark);
+}
+
+#md2mp p {
+    margin: 1em 0;
+}
+
+#md2mp h1,
+#md2mp h2,
+#md2mp h3,
+#md2mp h4,
+#md2mp h5,
+#md2mp h6 {
+    margin: 1.2em 0 1em;
+    padding: 0px;
+    font-weight: bold;
+    color: var(--midnight-accent);
+}
+
+#md2mp h1 {
+    font-size: 1.5em;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(201, 173, 167, 0.3);
+}
+
+#md2mp h2 {
+    font-size: 1.3em;
+    border-bottom: 2px solid var(--midnight-purple);
+    padding-bottom: 8px;
+}
+
+#md2mp h3 {
+    font-size: 1.2em;
+    color: var(--midnight-light);
+}
+
+#md2mp h4 {
+    font-size: 1.1em;
+    color: var(--midnight-purple);
+}
+
+#md2mp h5,
+#md2mp h6 {
+    font-size: 1em;
+}
+
+#md2mp strong {
+    color: var(--midnight-accent);
+    font-weight: bold;
+}
+
+#md2mp a {
+    color: var(--midnight-accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--midnight-purple);
+}
+
+#md2mp blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    border-left: 5px solid #4a4e69;
+    background: #16213e;
+    border-radius: 4px;
+}
+
+#md2mp ul,
+#md2mp ol {
+    padding-left: 1.5em;
+    margin: 1em 0;
+}
+
+#md2mp li {
+    margin: 0.5em 0;
+    line-height: 1.8;
+}
+
+#md2mp code {
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+}
+
+#md2mp p code,
+#md2mp li code {
+    color: #c9ada7;
+    background: #16213e;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+#md2mp pre {
+    background: #0d0d1a;
+    color: #c9ada7;
+    border-radius: 6px;
+    padding: 1em;
+    margin: 1em 0;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+#md2mp pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+#md2mp table {
+    border-collapse: collapse;
+    border: 1px solid #4a4e69;
+    margin: 1.5em auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+#md2mp table th,
+#md2mp table td {
+    border: 1px solid #4a4e69;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+#md2mp table th {
+    background: #4a4e69;
+    color: #c9ada7;
+    font-weight: bold;
+}
+
+#md2mp table tr:nth-child(even) {
+    background: #16213e;
+}
+
+#md2mp img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+    border-radius: 4px;
+}
+
+#md2mp hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--midnight-purple), transparent);
+    margin: 2em 0;
+}
+
+#md2mp .footnote {
+    color: var(--midnight-accent);
+}
+
+#md2mp #footnotes p {
+    display: flex;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+#md2mp .footnote-num {
+    display: inline;
+    width: 10%;
+}
+
+#md2mp .footnote-txt {
+    display: inline;
+    width: 90%;
+}

@@ -1,0 +1,38 @@
+{
+	"name": "obsidian-md2mp-unite",
+	"version": "1.0.0",
+	"description": "Publish markdown files to WeChat Official Media Platform (integrated version)",
+	"main": "main.js",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+	},
+	"keywords": [
+		"obsidian",
+		"plugin",
+		"wechat",
+		"mp"
+	],
+	"author": "Ation",
+	"license": "MIT",
+	"dependencies": {
+		"css-tree": "^2.3.1",
+		"form-data-encoder": "^3.0.0",
+		"formdata-node": "^6.0.3",
+		"gray-matter": "^4.0.3",
+		"highlight.js": "^11.9.0",
+		"marked": "^12.0.0",
+		"marked-highlight": "^2.1.1",
+		"punycode": "^2.3.1",
+		"toml": "^3.0.0"
+	},
+	"devDependencies": {
+		"@types/css-tree": "^2.3.11",
+		"@types/node": "^16.11.6",
+		"builtin-modules": "3.3.0",
+		"esbuild": "0.17.3",
+		"obsidian": "latest",
+		"tslib": "2.4.0",
+		"typescript": "4.7.4"
+	}
+}

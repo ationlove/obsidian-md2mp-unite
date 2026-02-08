@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-md2mp-unite",
+	"name": "Obsidian MD2MP Unite",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Publish markdown files to WeChat Official Account (integrated version)",
+	"author": "Ation",
+	"authorUrl": "https://github.com/yourusername",
+	"isDesktopOnly": true
+}
