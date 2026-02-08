@@ -194,8 +194,81 @@ export function wrapWithWechatStyle(
 	const highlightCss = getHighlightThemeCss(pluginPath, actualHighlightTheme);
 	applyCssToElement(highlightCss, md2mpElement);
 
+	// 微信公众号编辑器会去除 <code> 标签内的换行符，需要将换行符转换为 <br> 标签
+	const codeElements = md2mpElement.querySelectorAll('pre code');
+	codeElements.forEach((code) => {
+		// 获取当前的 innerHTML（包含语法高亮的 <span> 标签）
+		const innerHTML = (code as HTMLElement).innerHTML;
+
+		// 使用递归函数处理文本节点，将换行符替换为 <br>
+		const processTextNodes = (element: Element) => {
+			const childNodes = Array.from(element.childNodes);
+
+			childNodes.forEach((node) => {
+				if (node.nodeType === Node.TEXT_NODE) {
+					// 文本节点：将换行符替换为 <br>
+					const text = node.textContent || '';
+					if (text.includes('\n')) {
+						const fragment = document.createDocumentFragment();
+						const parts = text.split('\n');
+
+						parts.forEach((part, index) => {
+							if (index > 0) {
+								const br = document.createElement('br');
+								fragment.appendChild(br);
+							}
+							if (part.length > 0) {
+								fragment.appendChild(document.createTextNode(part));
+							}
+						});
+
+						node.parentNode?.replaceChild(fragment, node);
+					}
+				} else if (node.nodeType === Node.ELEMENT_NODE) {
+					// 元素节点：递归处理
+					processTextNodes(node as Element);
+				}
+			});
+		};
+
+		// 创建一个临时容器来处理 HTML
+		const tempContainer = document.createElement('div');
+		tempContainer.innerHTML = innerHTML;
+		processTextNodes(tempContainer);
+
+			// 将处理后的 HTML 设置回去
+		(code as HTMLElement).innerHTML = tempContainer.innerHTML;
+	});
+
 	// 返回带有内联样式的 HTML
 	let result = md2mpElement.outerHTML;
+
+	// 添加响应式样式：在窄屏（<400px）下显示水平滚动条，不自动换行
+	const responsiveStyle = `
+	<style>
+		@media (max-width: 400px) {
+			#md2mp pre {
+				overflow-x: auto;
+				max-width: 100%;
+			}
+			#md2mp pre code {
+				white-space: pre !important;
+				word-wrap: normal !important;
+				word-break: normal !important;
+			}
+		}
+		@media (min-width: 401px) {
+			#md2mp pre code {
+				white-space: pre-wrap !important;
+				word-wrap: break-word !important;
+				word-break: break-word !important;
+			}
+		}
+	</style>
+	`;
+
+	// 将 style 标签插入到 #md2mp 元素内部
+	result = result.replace('<section id="md2mp">', `<section id="md2mp">${responsiveStyle}`);
 
 	// 微信公众号后处理：移除多余的换行
 	result = result
