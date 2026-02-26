@@ -194,34 +194,70 @@ export function wrapWithWechatStyle(
 	const highlightCss = getHighlightThemeCss(pluginPath, actualHighlightTheme);
 	applyCssToElement(highlightCss, md2mpElement);
 
-	// 微信公众号编辑器会去除 <code> 标签内的换行符，需要将换行符转换为 <br> 标签
+	// 微信公众号编辑器会去除 <code> 标签内的换行符和空格
+	// 解决方案：递归处理所有文本节点
+	// - 换行符替换为 <br> 标签
+	// - 空格通过在之前的元素上添加 margin-right 样式来保留
 	const codeElements = md2mpElement.querySelectorAll('pre code');
 	codeElements.forEach((code) => {
-		// 获取当前的 innerHTML（包含语法高亮的 <span> 标签）
-		const innerHTML = (code as HTMLElement).innerHTML;
-
-		// 使用递归函数处理文本节点，将换行符替换为 <br>
 		const processTextNodes = (element: Element) => {
 			const childNodes = Array.from(element.childNodes);
 
 			childNodes.forEach((node) => {
 				if (node.nodeType === Node.TEXT_NODE) {
-					// 文本节点：将换行符替换为 <br>
 					const text = node.textContent || '';
-					if (text.includes('\n')) {
+					if (text.includes('\n') || text.includes(' ')) {
 						const fragment = document.createDocumentFragment();
-						const parts = text.split('\n');
-
-						parts.forEach((part, index) => {
-							if (index > 0) {
+						
+						let currentText = '';
+						
+						for (let i = 0; i < text.length; i++) {
+							const char = text[i];
+							
+							if (char === '\n') {
+								if (currentText.length > 0) {
+									fragment.appendChild(document.createTextNode(currentText));
+									currentText = '';
+								}
 								const br = document.createElement('br');
 								fragment.appendChild(br);
-							}
-							if (part.length > 0) {
-								fragment.appendChild(document.createTextNode(part));
-							}
-						});
+							} else if (char === ' ') {
+								if (currentText.length > 0) {
+									fragment.appendChild(document.createTextNode(currentText));
+									currentText = '';
+								}
+								// 空格：替换为带样式的 span
+								// const spaceSpan = document.createElement('span');
+								// spaceSpan.style.marginLeft = '-0.2rem';
+								// spaceSpan.style.marginRight = '-0.2rem';
+								// // spaceSpan.innerHTML = '　&nbsp;';
+								// spaceSpan.innerHTML = '　&nbsp;';
+								// fragment.appendChild(spaceSpan);
 
+								const spaceSpan = document.createElement('span');
+
+								const spaceSpan1 = document.createElement('span');
+								spaceSpan1.style.marginLeft = '0';
+								spaceSpan1.style.marginRight = '-1.6em';
+								spaceSpan1.innerHTML = '　&nbsp;';
+								spaceSpan.appendChild(spaceSpan1);
+
+								const spaceSpan2 = document.createElement('span');
+								spaceSpan2.style.marginLeft = '-1.6em';
+								spaceSpan2.style.marginRight = '0';
+								spaceSpan2.innerHTML = '&nbsp;　';
+								spaceSpan.appendChild(spaceSpan2);
+
+								fragment.appendChild(spaceSpan);
+							} else {
+								currentText += char;
+							}
+						}
+						
+						if (currentText.length > 0) {
+							fragment.appendChild(document.createTextNode(currentText));
+						}
+						
 						node.parentNode?.replaceChild(fragment, node);
 					}
 				} else if (node.nodeType === Node.ELEMENT_NODE) {
@@ -231,13 +267,7 @@ export function wrapWithWechatStyle(
 			});
 		};
 
-		// 创建一个临时容器来处理 HTML
-		const tempContainer = document.createElement('div');
-		tempContainer.innerHTML = innerHTML;
-		processTextNodes(tempContainer);
-
-			// 将处理后的 HTML 设置回去
-		(code as HTMLElement).innerHTML = tempContainer.innerHTML;
+		processTextNodes(code);
 	});
 
 	// 返回带有内联样式的 HTML
@@ -246,6 +276,11 @@ export function wrapWithWechatStyle(
 	// 添加响应式样式：在窄屏（<400px）下显示水平滚动条，不自动换行
 	const responsiveStyle = `
 	<style>
+		.md2mp-space::before {
+			margin-left: 0.1rem;
+			margin-right: 0.1rem;
+			content: '\u00A0';
+		}
 		@media (max-width: 400px) {
 			#md2mp pre {
 				overflow-x: auto;
